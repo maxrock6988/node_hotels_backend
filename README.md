@@ -322,8 +322,6 @@ git push origin feature-name
 Electronics & Communication Engineering (ECE)
 National Institute of Technology Agartala (NIT Agartala)
 
-GitHub: https://github.com/YOUR_GITHUB_USERNAME
-
 ---
 
 # ⭐ Support
