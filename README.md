@@ -317,7 +317,7 @@ git push origin feature-name
 
 # 👨‍💻 Author
 
-**Maxy**
+**Iash Das**
 
 Electronics & Communication Engineering (ECE)
 National Institute of Technology Agartala (NIT Agartala)
