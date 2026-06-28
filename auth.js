@@ -5,11 +5,13 @@ const Person = require('./models/person')
 //Configure Passport
 passport.use(new LocalStrategy(async (USERNAME, password, done) => {
     try {
-       // console.log('recieved credendtial:', USERNAME, password);
+        // console.log('recieved credendtial:', USERNAME, password);
         const user = await Person.findOne({ username: USERNAME });
         if (!user)
             return done(null, false, { message: 'incorrect username.' });  //done(error, user, info) parameters of done
-        const ispasswordMatch = user.password === password ? true : false;
+
+        const ispasswordMatch = await user.comparepassword(password);//function for comapre salted+hash password
+
 
         if (ispasswordMatch) {
             return done(null, user)
@@ -22,4 +24,4 @@ passport.use(new LocalStrategy(async (USERNAME, password, done) => {
     }
 }))
 
-module.exports=passport;// export Configure Passport
+module.exports = passport;// export Configure Passport

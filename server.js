@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const db = require('./db');
 require('dotenv').config();
-const passport=require('./auth');
+const passport=require("./auth")
 
 
 const bodyParser = require('body-parser');
@@ -31,7 +31,7 @@ app.get('/', logRequest, (req, res) => {
 
 //import router
 const personRoutes = require("./routes/personRoutes");
-app.use('/person',LocalAuthMiddleware, personRoutes)
+app.use('/person', personRoutes)
 
 //import router
 const menuRoutes = require("./routes/menuRoutes");
